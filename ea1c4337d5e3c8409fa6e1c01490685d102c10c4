@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_523154a1",
+        "filename": "openstack-vitrage-ui.spec",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-02-01T12:43:41Z",
+      "side": 1,
+      "message": "rm -rf doc/build/.{doctrees,buildinfo}",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 33
+      },
+      "revId": "ea1c4337d5e3c8409fa6e1c01490685d102c10c4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_322ce04a",
+        "filename": "openstack-vitrage-ui.spec",
+        "patchSetId": 10
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-02-01T12:43:41Z",
+      "side": 1,
+      "message": "this needs to be:\n\n%doc doc/build/html\n\nbased on the CI output",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 9
+      },
+      "revId": "ea1c4337d5e3c8409fa6e1c01490685d102c10c4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

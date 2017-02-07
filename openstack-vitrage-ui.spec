@@ -8,7 +8,7 @@ Version:        XXX
 Release:        XXX
 Summary:        Vitrage Management Dashboard
 
-License:        ASL 2.0
+License:        ASL 2.0 and BSD and MIT
 URL:            https://github.com/openstack/vitrage-dashboard
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 BuildArch:      noarch

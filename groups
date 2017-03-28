@@ -1,5 +1,9 @@
-# UUID                                  	Group Name
-#
-73762010b89736c0d22e245937bd3b1cdd196abf	openstack/vitrage-dashboard-distgit-core
-ab122783ebd7dbe813892be53b8c0ad8c3a3d719	openstack/vitrage-dashboard-distgit-ptl
-global:Registered-Users                 	Registered Users
+# UUID Group Name
+global:Registered-Users	Registered Users
+5022a42e9086fbb9bca896b5cf838818c34a7d25	openstack/vitrage-dashboard-core
+4572c517702492251ad622a289176552a8acbbb2	rdo-superusers
+global:Anonymous-Users	Anonymous Users
+05a678d3d4a168e149d5e8a0063bbd1b1c5526da	Administrators
+401cf37bee35d1c809d4d957e55f2a304f8eed69	rdo-provenpackagers
+6ddfecad023c6f4fa3ac8c4d2583c502ea675a73	Non-Interactive Users
+0fd0b52ca077dae62c5367dcfcad30301e228164	openstack/vitrage-dashboard-ptl

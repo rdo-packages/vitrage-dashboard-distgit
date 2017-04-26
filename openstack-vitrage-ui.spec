@@ -61,17 +61,17 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 mkdir -p  %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled
 mkdir -p  %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled
 
-mv enabled/_80_project_vitrage_panel_group.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_80_project_vitrage_panel_group.py
-mv enabled/_90_project_topology_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py
-mv enabled/_91_project_alarms_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_91_project_alarms_vitrage_panel.py
-mv enabled/_92_project_entities_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_panel.py
-mv enabled/_93_project_template_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_93_project_template_vitrage_panel.py
+mv enabled/_40.*.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/
 
-ln -s %{_sysconfdir}/openstack-dashboard/enabled/_80_project_vitrage_panel_group.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_80_project_vitrage_panel_group.py
-ln -s %{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_90_project_topology_vitrage_panel.py
-ln -s %{_sysconfdir}/openstack-dashboard/enabled/_91_project_alarms_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_91_project_alarms_vitrage_panel.py
-ln -s %{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_92_project_entities_vitrage_panel.py
-ln -s %{_sysconfdir}/openstack-dashboard/enabled/_93_project_template_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_93_project_template_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4000_project_vitrage_panel_group.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4000_project_vitrage_panel_group.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4010_project_topology_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4010_project_topology_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4020_project_alarms_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4020_project_alarms_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4030_project_entities_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4030_project_entities_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4040_project_template_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4040_project_template_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4100_admin_vitrage_panel_group.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4100_admin_vitrage_panel_group.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4110_admin_topology_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4110_admin_topology_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4120_admin_alarms_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4120_admin_alarms_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4130_admin_entities_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4130_admin_entities_vitrage_panel.py
 
 
 %files
@@ -80,17 +80,25 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_93_project_template_vitrage_pa
 %{python2_sitelib}/%{mod_name}
 %{python2_sitelib}/*.egg-info
 
-%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_80_project_vitrage_panel_group.py*
-%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_90_project_topology_vitrage_panel.py*
-%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_91_project_alarms_vitrage_panel.py*
-%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_92_project_entities_vitrage_panel.py*
-%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_93_project_template_vitrage_panel.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4000_project_vitrage_panel_group.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4010_project_topology_vitrage_panel.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4020_project_alarms_vitrage_panel.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4030_project_entities_vitrage_panel.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4040_project_template_vitrage_panel.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4100_admin_vitrage_panel_group.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4110_admin_topology_vitrage_panel.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4120_admin_alarms_vitrage_panel.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4130_admin_entities_vitrage_panel.py*
 
-%{_sysconfdir}/openstack-dashboard/enabled/_80_project_vitrage_panel_group.py*
-%{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py*
-%{_sysconfdir}/openstack-dashboard/enabled/_91_project_alarms_vitrage_panel.py*
-%{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_panel.py*
-%{_sysconfdir}/openstack-dashboard/enabled/_93_project_template_vitrage_panel.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4000_project_vitrage_panel_group.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4010_project_topology_vitrage_panel.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4020_project_alarms_vitrage_panel.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4030_project_entities_vitrage_panel.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4040_project_template_vitrage_panel.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4100_admin_vitrage_panel_group.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4110_admin_topology_vitrage_panel.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4120_admin_alarms_vitrage_panel.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4130_admin_entities_vitrage_panel.py*
 
 %files doc
 %doc doc/build/html

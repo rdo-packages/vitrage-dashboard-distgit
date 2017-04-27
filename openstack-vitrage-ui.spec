@@ -61,11 +61,11 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 mkdir -p  %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled
 mkdir -p  %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled
 
-mv enabled/_80_project_vitrage_panel_group.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_80_project_vitrage_panel_group.py
-mv enabled/_90_project_topology_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py
-mv enabled/_91_project_alarms_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_91_project_alarms_vitrage_panel.py
-mv enabled/_92_project_entities_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_92_project_entities_vitrage_panel.py
-mv enabled/_93_project_template_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_93_project_template_vitrage_panel.py
+mv enabled/_4000_project_vitrage_panel_group.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_4000_project_vitrage_panel_group.py
+mv enabled/_4010_project_topology_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_4010_project_topology_vitrage_panel.py
+mv enabled/_4020_project_alarms_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_4020_project_alarms_vitrage_panel.py
+mv enabled/_4030_project_entities_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_4030_project_entities_vitrage_panel.py
+mv enabled/_4040_project_template_vitrage_panel.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/_4040_project_template_vitrage_panel.py
 
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_80_project_vitrage_panel_group.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_80_project_vitrage_panel_group.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_90_project_topology_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_90_project_topology_vitrage_panel.py

@@ -22,7 +22,8 @@ BuildArch:      noarch
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
+BuildRequires:  git
 
 Requires: python-babel
 Requires: openstack-dashboard
@@ -37,11 +38,13 @@ Vitrage Management Dashboard
 %package doc
 Summary: Documentation for Vitrage dashboard
 %description doc
+
 Documentation files for OpenStack Vitrage dashboard for Horizon
 
 
 %prep
-%setup -q -n vitrage-dashboard-%{upstream_version}
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
+
 # Remove bundled egg-info
 rm {test-,}requirements.txt
 

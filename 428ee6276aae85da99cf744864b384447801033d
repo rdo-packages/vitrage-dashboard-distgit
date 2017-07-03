@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1ee43a0c",
+        "filename": "openstack-vitrage-ui.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-07-03T10:32:34Z",
+      "side": 1,
+      "message": "We need to add BuildRequires: git and change this line to be:\n\n%autosetup -n vitrage-dashboard-%{upstream_version} -S git",
+      "revId": "428ee6276aae85da99cf744864b384447801033d",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

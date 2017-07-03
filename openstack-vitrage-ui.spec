@@ -23,6 +23,7 @@ BuildRequires:  python2-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-sphinx
 BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
 
 Requires: python-babel
 Requires: openstack-dashboard
@@ -37,6 +38,7 @@ Vitrage Management Dashboard
 %package doc
 Summary: Documentation for Vitrage dashboard
 %description doc
+
 Documentation files for OpenStack Vitrage dashboard for Horizon
 
 

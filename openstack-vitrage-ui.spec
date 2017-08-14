@@ -25,11 +25,13 @@ BuildRequires:  python-sphinx
 BuildRequires:  python-openstackdocstheme
 BuildRequires:  git
 
-Requires: python-babel
 Requires: openstack-dashboard
 Requires: python-iso8601
-Requires: python-keystoneclient
 Requires: python-vitrageclient
+Requires: python-django-compressor >= 2.0
+Requires: python-django-openstack-auth >= 3.5.0
+Requires: python-django >= 1.8
+Requires: python-pbr >= 2.0.0
 
 %description
 Vitrage Management Dashboard

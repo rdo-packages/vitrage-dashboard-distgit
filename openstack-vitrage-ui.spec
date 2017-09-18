@@ -24,6 +24,7 @@ BuildRequires:  python-pbr
 BuildRequires:  python-sphinx
 BuildRequires:  python-openstackdocstheme
 BuildRequires:  git
+BuildRequires:  openstack-macros
 
 Requires: openstack-dashboard
 Requires: python-iso8601
@@ -48,7 +49,7 @@ Documentation files for OpenStack Vitrage dashboard for Horizon
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 # Remove bundled egg-info
-rm {test-,}requirements.txt
+%py_req_cleanup
 
 %build
 %{__python2} setup.py build

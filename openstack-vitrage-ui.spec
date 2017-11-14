@@ -26,11 +26,11 @@ BuildRequires:  python-openstackdocstheme
 BuildRequires:  git
 BuildRequires:  openstack-macros
 
-Requires: openstack-dashboard
+Requires: openstack-dashboard >= 1:13.0.0
+
 Requires: python-iso8601
 Requires: python-vitrageclient
 Requires: python-django-compressor >= 2.0
-Requires: python-django-openstack-auth >= 3.5.0
 Requires: python-django >= 1.8
 Requires: python-pbr >= 2.0.0
 

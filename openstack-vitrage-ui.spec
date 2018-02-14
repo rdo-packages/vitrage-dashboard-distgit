@@ -20,19 +20,19 @@ Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstr
 BuildArch:      noarch
 
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-sphinx
-BuildRequires:  python-openstackdocstheme
+BuildRequires:  python2-pbr
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-openstackdocstheme
 BuildRequires:  git
 BuildRequires:  openstack-macros
 
 Requires: openstack-dashboard >= 1:13.0.0
 
-Requires: python-iso8601
-Requires: python-vitrageclient
-Requires: python-django-compressor >= 2.0
-Requires: python-django >= 1.8
-Requires: python-pbr >= 2.0.0
+Requires: python2-iso8601
+Requires: python2-vitrageclient
+Requires: python2-django-compressor >= 2.0
+Requires: python2-django >= 1.8
+Requires: python2-pbr >= 2.0.0
 
 %description
 Vitrage Management Dashboard

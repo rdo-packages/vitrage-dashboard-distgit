@@ -4,7 +4,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           openstack-vitrage-ui
-Version:        1.4.1
+Version:        1.4.2
 Release:        1%{?dist}
 Summary:        Vitrage Management Dashboard
 
@@ -111,6 +111,9 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4130_admin_entities_vitrage_pa
 %license LICENSE
 
 %changelog
+* Wed Feb 21 2018 RDO <dev@lists.rdoproject.org> 1.4.2-1
+- Update to 1.4.2
+
 * Sat Feb 17 2018 RDO <dev@lists.rdoproject.org> 1.4.1-1
 - Update to 1.4.1
 

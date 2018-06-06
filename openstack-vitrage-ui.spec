@@ -67,7 +67,10 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 mkdir -p  %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled
 mkdir -p  %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled
 
-mv vitrage_dashboard/enabled/_4*.py %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled/
+for f in vitrage_dashboard/enabled/_4*.py*; do
+  filename=`basename $f`
+  install -p -D -m 640 vitrage_dashboard/enabled/${filename} %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/$(filename)
+done
 
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4000_project_vitrage_panel_group.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4000_project_vitrage_panel_group.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4010_project_topology_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4010_project_topology_vitrage_panel.py

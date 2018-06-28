@@ -111,3 +111,4 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4130_admin_entities_vitrage_pa
 %license LICENSE
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/vitrage-dashboard/commit/?id=470ae7d22ddbb199453e74a72b7251e60468bbc8

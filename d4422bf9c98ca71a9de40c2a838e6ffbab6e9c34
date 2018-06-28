@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_2f1476f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-06-28T08:27:45Z",
+      "side": 1,
+      "message": "For completeness, please add the upstream review where this file was included.",
+      "revId": "d4422bf9c98ca71a9de40c2a838e6ffbab6e9c34",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_4f0faae1",
+        "filename": "openstack-vitrage-ui.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-06-28T08:27:45Z",
+      "side": 1,
+      "message": "Please remove this line",
+      "range": {
+        "startLine": 116,
+        "startChar": 10,
+        "endLine": 117,
+        "endChar": 144
+      },
+      "revId": "d4422bf9c98ca71a9de40c2a838e6ffbab6e9c34",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

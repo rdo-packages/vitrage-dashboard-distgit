@@ -78,6 +78,7 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4100_admin_vitrage_panel_group
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4110_admin_topology_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4110_admin_topology_vitrage_panel.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4120_admin_alarms_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4120_admin_alarms_vitrage_panel.py
 ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4130_admin_entities_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4130_admin_entities_vitrage_panel.py
+ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4140_admin_template_vitrage_panel.py %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4140_admin_template_vitrage_panel.py
 
 
 %files
@@ -95,6 +96,7 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4130_admin_entities_vitrage_pa
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4110_admin_topology_vitrage_panel.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4120_admin_alarms_vitrage_panel.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4130_admin_entities_vitrage_panel.py*
+%{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4140_admin_template_vitrage_panel.py*
 
 %{_sysconfdir}/openstack-dashboard/enabled/_4000_project_vitrage_panel_group.py*
 %{_sysconfdir}/openstack-dashboard/enabled/_4010_project_topology_vitrage_panel.py*
@@ -105,9 +107,11 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4130_admin_entities_vitrage_pa
 %{_sysconfdir}/openstack-dashboard/enabled/_4110_admin_topology_vitrage_panel.py*
 %{_sysconfdir}/openstack-dashboard/enabled/_4120_admin_alarms_vitrage_panel.py*
 %{_sysconfdir}/openstack-dashboard/enabled/_4130_admin_entities_vitrage_panel.py*
+%{_sysconfdir}/openstack-dashboard/enabled/_4140_admin_template_vitrage_panel.py*
 
 %files doc
 %doc doc/build/html
 %license LICENSE
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/vitrage-dashboard/commit/?id=470ae7d22ddbb199453e74a72b7251e60468bbc8

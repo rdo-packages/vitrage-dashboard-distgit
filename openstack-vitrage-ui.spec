@@ -26,13 +26,20 @@ BuildRequires:  python2-openstackdocstheme
 BuildRequires:  git
 BuildRequires:  openstack-macros
 
-Requires: openstack-dashboard >= 1:13.0.0
+Requires: openstack-dashboard >= 1:14.0.0
 
 Requires: python2-iso8601
 Requires: python2-vitrageclient
 Requires: python2-django-compressor >= 2.0
 Requires: python2-django >= 1.8
 Requires: python2-pbr >= 2.0.0
+Requires: python2-XStatic-Angular-Bootstrap >= 2.2.0.0
+Requires: python2-XStatic-Angular >= 1.5.8.0
+Requires: python-XStatic-Bootstrap-Datepicker >= 1.3.1.0
+Requires: python2-XStatic-Bootstrap-SCSS >= 3.3.7.1
+Requires: python2-XStatic-Font-Awesome >= 4.7.0.0
+Requires: python-XStatic-jQuery >= 1.8.2.1
+Requires: python2-XStatic-smart-table >= 1.4.13.2
 
 %description
 Vitrage Management Dashboard

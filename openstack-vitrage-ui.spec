@@ -40,7 +40,7 @@ BuildRequires:  openstack-macros
 Requires: openstack-dashboard >= 1:14.0.0
 
 Requires: python%{pyver}-iso8601
-Requires: python%{pyver}-vitrageclient
+Requires: python%{pyver}-vitrageclient >= 2.5.0
 Requires: python%{pyver}-django-compressor >= 2.0
 Requires: python%{pyver}-django >= 1.8
 Requires: python%{pyver}-pbr >= 2.0.0

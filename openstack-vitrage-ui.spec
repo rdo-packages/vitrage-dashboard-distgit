@@ -14,6 +14,8 @@
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
+%global with_doc 1
+
 Name:           openstack-vitrage-ui
 Version:        XXX
 Release:        XXX
@@ -32,8 +34,6 @@ BuildArch:      noarch
 
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  python%{pyver}-openstackdocstheme
 BuildRequires:  git
 BuildRequires:  openstack-macros
 
@@ -63,11 +63,17 @@ Requires: python%{pyver}-XStatic-jQuery >= 1.8.2.1
 Vitrage Management Dashboard
 
 
+%if 0%{?with_doc}
 %package doc
 Summary: Documentation for Vitrage dashboard
+
+BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python%{pyver}-openstackdocstheme
+
 %description doc
 
 Documentation files for OpenStack Vitrage dashboard for Horizon
+%endif
 
 
 %prep
@@ -79,10 +85,12 @@ Documentation files for OpenStack Vitrage dashboard for Horizon
 %build
 %{pyver_build}
 
+%if 0%{?with_doc}
 # Build html documentation
 %{pyver_bin} setup.py build_sphinx
 # remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
+%endif
 
 
 %install
@@ -134,8 +142,10 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4140_admin_template_vitrage_pa
 %{_sysconfdir}/openstack-dashboard/enabled/_4130_admin_entities_vitrage_panel.py*
 %{_sysconfdir}/openstack-dashboard/enabled/_4140_admin_template_vitrage_panel.py*
 
+%if 0%{?with_doc}
 %files doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %changelog

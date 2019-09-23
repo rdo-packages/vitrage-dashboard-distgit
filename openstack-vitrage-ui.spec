@@ -69,6 +69,7 @@ Summary: Documentation for Vitrage dashboard
 
 BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-sphinxcontrib-rsvgconverter
 
 %description doc
 

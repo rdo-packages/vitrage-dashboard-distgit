@@ -49,6 +49,7 @@ Requires: python%{pyver}-XStatic-Angular >= 1.5.8.0
 Requires: python%{pyver}-XStatic-Bootstrap-SCSS >= 3.3.7.1
 Requires: python%{pyver}-XStatic-Font-Awesome >= 4.7.0.0
 Requires: python%{pyver}-XStatic-smart-table >= 1.4.13.2
+Requires: python%{pyver}-XStatic-D3 >= 3.5.17.0
 
 # Handle python2 exception
 %if %{pyver} == 2

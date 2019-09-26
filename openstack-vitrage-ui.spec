@@ -54,9 +54,11 @@ Requires: python%{pyver}-XStatic-smart-table >= 1.4.13.2
 %if %{pyver} == 2
 Requires: python-XStatic-Bootstrap-Datepicker >= 1.3.1.0
 Requires: python-XStatic-jQuery >= 1.8.2.1
+Requires: python-XStatic-D3 >= 3.5.17.0
 %else
 Requires: python%{pyver}-XStatic-Bootstrap-Datepicker >= 1.3.1.0
 Requires: python%{pyver}-XStatic-jQuery >= 1.8.2.1
+Requires: python%{pyver}-XStatic-D3 >= 3.5.17.0
 %endif
 
 %description

@@ -17,8 +17,8 @@
 %global with_doc 1
 
 Name:           openstack-vitrage-ui
-Version:        XXX
-Release:        XXX
+Version:        2.0.0
+Release:        1%{?dist}
 Summary:        Vitrage Management Dashboard
 
 # bundled libraries:
@@ -151,3 +151,6 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4140_admin_template_vitrage_pa
 %endif
 
 %changelog
+* Thu Oct 03 2019 RDO <dev@lists.rdoproject.org> 2.0.0-1
+- Update to 2.0.0
+

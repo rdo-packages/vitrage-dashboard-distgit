@@ -89,8 +89,8 @@ Documentation files for OpenStack Vitrage dashboard for Horizon
 
 %if 0%{?with_doc}
 # Build html documentation
-%{pyver_bin} setup.py build_sphinx
-# remove the sphinx-build-%{pyver} leftovers
+sphinx-build -b html doc/source doc/build/html
+# remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 

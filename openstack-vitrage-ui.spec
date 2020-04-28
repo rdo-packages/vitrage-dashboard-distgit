@@ -1,14 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %global pypi_name vitrage-dashboard
 %global mod_name  vitrage_dashboard
 
@@ -32,33 +21,34 @@ URL:            https://github.com/openstack/vitrage-dashboard
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python3-devel
+BuildRequires:  python3-pbr
 BuildRequires:  git
 BuildRequires:  openstack-macros
 
-Requires: openstack-dashboard >= 1:14.0.0
+Requires: openstack-dashboard >= 1:17.1.0
 
-Requires: python%{pyver}-iso8601
-Requires: python%{pyver}-vitrageclient >= 2.5.0
-Requires: python%{pyver}-django-compressor >= 2.0
-Requires: python%{pyver}-django >= 1.8
-Requires: python%{pyver}-pbr >= 2.0.0
-Requires: python%{pyver}-XStatic-Angular-Bootstrap >= 2.2.0.0
-Requires: python%{pyver}-XStatic-Angular >= 1.5.8.0
-Requires: python%{pyver}-XStatic-Bootstrap-SCSS >= 3.3.7.1
-Requires: python%{pyver}-XStatic-Font-Awesome >= 4.7.0.0
-Requires: python%{pyver}-XStatic-smart-table >= 1.4.13.2
-Requires: python%{pyver}-XStatic-D3 >= 3.5.17.0
+Requires: python3-iso8601
+Requires: python3-vitrageclient >= 2.5.0
+Requires: python3-django-compressor >= 2.0
+Requires: python3-pbr >= 2.0.0
+Requires: python3-XStatic-Angular-Bootstrap >= 2.2.0.0
+Requires: python3-XStatic-Angular >= 1.5.8.0
+Requires: python3-XStatic-Bootstrap-SCSS >= 3.3.7.1
+Requires: python3-XStatic-Font-Awesome >= 4.7.0.0
+Requires: python3-XStatic-smart-table >= 1.4.13.2
+Requires: python3-XStatic-D3 >= 3.5.17.0
 
-# Handle python2 exception
-%if %{pyver} == 2
-Requires: python-XStatic-Bootstrap-Datepicker >= 1.3.1.0
-Requires: python-XStatic-jQuery >= 1.8.2.1
-%else
-Requires: python%{pyver}-XStatic-Bootstrap-Datepicker >= 1.3.1.0
-Requires: python%{pyver}-XStatic-jQuery >= 1.8.2.1
-%endif
+# Not packaged in RDO https://review.rdoproject.org/r/#/c/27219/
+# Requires: python3-XStatic-Dagre-D3 >= 0.4.17.0
+# Requires: python3-XStatic-Dagre >= 0.6.4.0
+# Requires: python3-XStatic-Graphlib >= 2.1.7.0
+# Requires: python3-XStatic-lodash >= 4.16.4.1
+# Requires: python3-XStatic-Moment-Timezone >= 0.5.22.0
+# Requires: python3-XStatic-moment >= 2.8.4.1
+
+Requires: python3-XStatic-Bootstrap-Datepicker >= 1.3.1.0
+Requires: python3-XStatic-jQuery >= 1.8.2.1
 
 %description
 Vitrage Management Dashboard
@@ -68,9 +58,9 @@ Vitrage Management Dashboard
 %package doc
 Summary: Documentation for Vitrage dashboard
 
-BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  python%{pyver}-openstackdocstheme
-BuildRequires:  python%{pyver}-sphinxcontrib-rsvgconverter
+BuildRequires:  python3-sphinx
+BuildRequires:  python3-openstackdocstheme
+BuildRequires:  python3-sphinxcontrib-rsvgconverter
 
 %description doc
 
@@ -85,7 +75,7 @@ Documentation files for OpenStack Vitrage dashboard for Horizon
 %py_req_cleanup
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %if 0%{?with_doc}
 # Build html documentation
@@ -96,7 +86,7 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 
 
 %install
-%{pyver_install}
+%{py3_install}
 
 # Move config to horizon
 mkdir -p  %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled
@@ -119,8 +109,8 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4140_admin_template_vitrage_pa
 %files
 %doc README.rst
 %license LICENSE
-%{pyver_sitelib}/%{mod_name}
-%{pyver_sitelib}/*.egg-info
+%{python3_sitelib}/%{mod_name}
+%{python3_sitelib}/*.egg-info
 
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4000_project_vitrage_panel_group.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4010_project_topology_vitrage_panel.py*

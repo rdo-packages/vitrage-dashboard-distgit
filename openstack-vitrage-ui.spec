@@ -35,7 +35,7 @@ BuildRequires:  /usr/bin/gpgv2
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
-BuildRequires:  git
+BuildRequires:  git-core
 BuildRequires:  openstack-macros
 
 Requires: openstack-dashboard >= 1:17.1.0

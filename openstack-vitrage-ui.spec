@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
 %global pypi_name vitrage-dashboard
 %global mod_name  vitrage_dashboard
 
@@ -8,8 +8,8 @@
 %global with_doc 1
 
 Name:           openstack-vitrage-ui
-Version:        XXX
-Release:        XXX
+Version:        3.6.0
+Release:        1%{?dist}
 Summary:        Vitrage Management Dashboard
 
 # bundled libraries:
@@ -157,3 +157,6 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4140_admin_template_vitrage_pa
 %endif
 
 %changelog
+* Tue Sep 20 2022 RDO <dev@lists.rdoproject.org> 3.6.0-1
+- Update to 3.6.0
+

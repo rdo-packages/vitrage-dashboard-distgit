@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b448f0ed_05a1d70a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2022-09-20T11:56:24Z",
+      "side": 1,
+      "message": "vitrage-ui zed-uc is 3.0.0, we can crosstag it ",
+      "revId": "10556a6b61b31ea1957227ba8a128bd1950203d9",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}

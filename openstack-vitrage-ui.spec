@@ -4,7 +4,8 @@
 %global mod_name  vitrage_dashboard
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-
+# we are excluding some runtime reqs from automatic generator
+%global excluded_reqs XStatic-Dagre-D3 XStatic-Dagre XStatic-Graphlib XStatic-lodash XStatic-moment XStatic-Moment-Timezone
 %global with_doc 1
 
 Name:           openstack-vitrage-ui
@@ -17,7 +18,7 @@ Summary:        Vitrage Management Dashboard
 # loadsh is MIT licensed
 # graphlib is MIT licensed
 # dagre is MIT licensed
-License:        ASL 2.0 and BSD and MIT
+License:        Apache-2.0 and BSD-3-Clause and MIT
 
 URL:            https://github.com/openstack/vitrage-dashboard
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
@@ -34,33 +35,11 @@ BuildRequires:  /usr/bin/gpgv2
 %endif
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
+BuildRequires:  pyproject-rpm-macros
 BuildRequires:  git-core
 BuildRequires:  openstack-macros
 
 Requires: openstack-dashboard >= 1:17.1.0
-
-Requires: python3-iso8601
-Requires: python3-vitrageclient >= 2.5.0
-Requires: python3-django-compressor >= 2.0
-Requires: python3-pbr >= 2.0.0
-Requires: python3-XStatic-Angular-Bootstrap >= 2.2.0.0
-Requires: python3-XStatic-Angular >= 1.5.8.0
-Requires: python3-XStatic-Bootstrap-SCSS >= 3.3.7.1
-Requires: python3-XStatic-Font-Awesome >= 4.7.0.0
-Requires: python3-XStatic-smart-table >= 1.4.13.2
-Requires: python3-XStatic-D3 >= 3.5.17.0
-
-# Not packaged in RDO https://review.rdoproject.org/r/#/c/27219/
-# Requires: python3-XStatic-Dagre-D3 >= 0.4.17.0
-# Requires: python3-XStatic-Dagre >= 0.6.4.0
-# Requires: python3-XStatic-Graphlib >= 2.1.7.0
-# Requires: python3-XStatic-lodash >= 4.16.4.1
-# Requires: python3-XStatic-Moment-Timezone >= 0.5.22.0
-# Requires: python3-XStatic-moment >= 2.8.4.1
-
-Requires: python3-XStatic-Bootstrap-Datepicker >= 1.3.1.0
-Requires: python3-XStatic-jQuery >= 1.8.2.1
 
 %description
 Vitrage Management Dashboard
@@ -70,8 +49,6 @@ Vitrage Management Dashboard
 %package doc
 Summary: Documentation for Vitrage dashboard
 
-BuildRequires:  python3-sphinx
-BuildRequires:  python3-openstackdocstheme
 BuildRequires:  python3-sphinxcontrib-rsvgconverter
 
 %description doc
@@ -87,22 +64,38 @@ Documentation files for OpenStack Vitrage dashboard for Horizon
 %endif
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 
-# Remove bundled egg-info
-%py_req_cleanup
+
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Automatic BR generation
+# Exclude some bad-known runtime reqs
+for pkg in %{excluded_reqs}; do
+  sed -i /^${pkg}.*/d requirements.txt
+done
+
+%generate_buildrequires
+%if 0%{?with_doc}
+  %pyproject_buildrequires requirements.txt -t -e docs
+%else
+  %pyproject_buildrequires requirements.txt
+%endif
 
 %build
-%{py3_build}
+%pyproject_wheel
 
 %if 0%{?with_doc}
 # Build html documentation
-sphinx-build -b html doc/source doc/build/html
+%tox -e docs
 # remove the sphinx-build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 
 %install
-%{py3_install}
+%pyproject_install
 
 # Move config to horizon
 mkdir -p  %{buildroot}%{_sysconfdir}/openstack-dashboard/enabled
@@ -126,7 +119,7 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4140_admin_template_vitrage_pa
 %doc README.rst
 %license LICENSE
 %{python3_sitelib}/%{mod_name}
-%{python3_sitelib}/*.egg-info
+%{python3_sitelib}/*.dist-info
 
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4000_project_vitrage_panel_group.py*
 %{_datadir}/openstack-dashboard/openstack_dashboard/local/enabled/_4010_project_topology_vitrage_panel.py*

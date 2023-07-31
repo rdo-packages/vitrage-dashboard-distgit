@@ -16,6 +16,24 @@
       "message": "we are losing the entire \u003c /usr/lib/python3.9/site-packages/vitrage_dashboard/dashboard/static/vendor somewhere...\n\nhttps://review.rdoproject.org/zuul/build/e64098a9952c40ee89ccddf003ff653f",
       "revId": "b923a48beaf8e995139ee1574e8fa08d1da136be",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08f8916f_37e1c9a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-07-31T16:48:10Z",
+      "side": 1,
+      "message": "It\u0027s because of this patch [1] which is in master and is not contained in current pinned version 3.0.0 (but it\u0027s contained in \u003e\u003d 3.0.1 [2])\nBasically, it relies on the xstatic libs requirements which we don\u0027t pull, instead of static files.\n\n[1] https://review.opendev.org/c/openstack/vitrage-dashboard/+/709208\n[2] https://github.com/openstack/vitrage-dashboard/commit/d181623f2285b7d745fe161e703dea7114ec8376",
+      "parentUuid": "ee0e7539_87c43e69",
+      "revId": "b923a48beaf8e995139ee1574e8fa08d1da136be",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee0e7539_87c43e69",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-07-31T15:48:11Z",
+      "side": 1,
+      "message": "we are losing the entire \u003c /usr/lib/python3.9/site-packages/vitrage_dashboard/dashboard/static/vendor somewhere...\n\nhttps://review.rdoproject.org/zuul/build/e64098a9952c40ee89ccddf003ff653f",
+      "revId": "b923a48beaf8e995139ee1574e8fa08d1da136be",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}

@@ -4,6 +4,8 @@
 %global mod_name  vitrage_dashboard
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{?dlrn: %global tarsources vitrage-dashboard}
+%{!?dlrn: %global tarsources vitrage_dashboard}
 # we are excluding some runtime reqs from automatic generator
 %global excluded_reqs XStatic-Dagre-D3 XStatic-Dagre XStatic-Graphlib XStatic-lodash XStatic-moment XStatic-Moment-Timezone
 %global with_doc 1
@@ -21,10 +23,10 @@ Summary:        Vitrage Management Dashboard
 License:        Apache-2.0 and BSD-3-Clause and MIT
 
 URL:            https://github.com/openstack/vitrage-dashboard
-Source0:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        https://tarballs.openstack.org/%{pypi_name}/%{tarsources}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
+Source101:        https://tarballs.openstack.org/%{pypi_name}/%{tarsources}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 BuildArch:      noarch
@@ -62,7 +64,7 @@ Documentation files for OpenStack Vitrage dashboard for Horizon
 %if 0%{?sources_gpg} == 1
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
-%autosetup -n %{pypi_name}-%{upstream_version} -S git
+%autosetup -n %{tarsources}-%{upstream_version} -S git
 
 
 sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini

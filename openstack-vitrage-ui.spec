@@ -1,4 +1,3 @@
-%global milestone .0rc1
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 %global pypi_name vitrage-dashboard
@@ -13,7 +12,7 @@
 
 Name:           openstack-vitrage-ui
 Version:        8.0.0
-Release:        0.1%{?milestone}%{?dist}
+Release:        1%{?dist}
 Summary:        Vitrage Management Dashboard
 
 # bundled libraries:
@@ -25,8 +24,6 @@ License:        Apache-2.0 and BSD-3-Clause and MIT
 
 URL:            https://github.com/openstack/vitrage-dashboard
 Source0:        https://tarballs.openstack.org/%{pypi_name}/%{tarsources}-%{upstream_version}.tar.gz
-#
-# patches_base=8.0.0.0rc1
 #
 
 # Required for tarball sources verification
@@ -157,6 +154,9 @@ ln -s %{_sysconfdir}/openstack-dashboard/enabled/_4140_admin_template_vitrage_pa
 %endif
 
 %changelog
+* Wed Apr 02 2025 RDO <dev@lists.rdoproject.org> 8.0.0-1
+- Update to 8.0.0
+
 * Tue Mar 18 2025 RDO <dev@lists.rdoproject.org> 8.0.0-0.1.0rc1
 - Update to 8.0.0.0rc1
 
